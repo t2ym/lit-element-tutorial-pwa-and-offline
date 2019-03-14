@@ -30,10 +30,19 @@ const polyfills = [
 
 const assets = [
   {
-    from: 'src/img',
+    from: 'locales',
+    to: 'locales'
+  },
+  {
+    from: 'views/locales',
+    to: 'views/locales'
+  },
+  {
+    from: 'img',
     to: 'img/'
   },
-  'src/manifest.webmanifest'
+  //'bundle.json', // not mandatory; just for live-localizer
+  'manifest.webmanifest'
 ];
 
 const plugins = [
@@ -41,11 +50,11 @@ const plugins = [
   new webpack.ProgressPlugin(),
   new HtmlWebpackPlugin({
     filename: 'index.html',
-    template: './src/index.html',
+    template: './index.html',
     minify: {
       collapseWhitespace: true,
       minifyCSS: true,
-      minifyJS: true
+      minifyJS: true,
     }
   }),
   new CopyWebpackPlugin([...polyfills, ...assets], {
@@ -57,6 +66,8 @@ module.exports = ({ mode, presets }) => {
   return webpackMerge(
     {
       mode,
+      entry: () => '.',
+      context: resolve('./preprocess'),
       output: {
         filename: '[name].[chunkhash:8].js'
       },
@@ -64,10 +75,17 @@ module.exports = ({ mode, presets }) => {
         rules: [
           {
             test: /\.js$/,
+            loader: require.resolve('@open-wc/webpack-import-meta-loader'),
+          },
+          {
+            test: /\.js$/,
             exclude: /node_modules/,
             loader: 'babel-loader',
             options: {
-              plugins: ['@babel/plugin-syntax-dynamic-import'],
+              plugins: [
+                '@babel/plugin-syntax-dynamic-import',
+                '@babel/plugin-syntax-import-meta',
+              ],
               presets: [
                 [
                   '@babel/preset-env',

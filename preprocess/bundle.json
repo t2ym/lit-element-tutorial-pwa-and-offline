@@ -1,0 +1,61 @@
+{
+  "chart-labels": {
+    "meta": {
+      "locales": [
+        "ja"
+      ]
+    },
+    "model": {},
+    "completed": "Completed",
+    "active": "Active"
+  },
+  "not-found-view": {
+    "meta": {
+      "locales": [
+        "ja"
+      ]
+    },
+    "model": {},
+    "h1": "Not found!"
+  },
+  "nothing-to-do": {
+    "meta": {
+      "locales": [
+        "ja"
+      ]
+    },
+    "model": {},
+    "p": "Nothing to do! 🌴"
+  },
+  "stats-view": {
+    "meta": {
+      "locales": [
+        "ja"
+      ]
+    },
+    "model": {}
+  },
+  "todo-view": {
+    "meta": {
+      "locales": [
+        "ja"
+      ]
+    },
+    "model": {
+      "div_1:vaadin-text-field": {
+        "placeholder": "Task"
+      }
+    },
+    "div_1:vaadin-button_1": " Add Todo ",
+    "vaadin-button_4": " Clear Completed ",
+    "filters": {
+      "All": "All",
+      "Active": "Active",
+      "Completed": "Completed"
+    },
+    "app-title": "Todo App",
+    "todos-link": "Todos",
+    "stats-link": "Stats"
+  },
+  "bundle": true
+}

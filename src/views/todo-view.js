@@ -1,4 +1,4 @@
-import { html } from 'lit-element';
+import { html, bind } from 'i18n-element';
 import '@vaadin/vaadin-text-field';
 import '@vaadin/vaadin-button';
 import '@vaadin/vaadin-checkbox';
@@ -18,13 +18,48 @@ import {
 } from '../redux/actions.js';
 import { BaseView } from './base-view.js';
 
+const i18nAttrRepoContainer = document.createElement('template');
+i18nAttrRepoContainer.innerHTML = `<i18n-attr-repo>
+  <template id="custom">
+    <vaadin-text-field placeholder="$"></vaadin-text-field>
+  </template>
+</i18n-attr-repo>`;
+document.head.appendChild(i18nAttrRepoContainer.content);
+
 class TodoView extends connect(store)(BaseView) {
+  static get is() {
+    return 'todo-view';
+  }
+
+  static get importMeta() {
+    return import.meta;
+  }
+
   static get properties() {
     return {
+      langUpdated: { type: String },
       todos: { type: Array },
       filter: { type: String },
       task: { type: String }
     };
+  }
+
+  constructor() {
+    super();
+    this.addEventListener('lang-updated', this._langUpdated);
+  }
+
+  _langUpdated(event) {
+    this.updateTitles();
+    this.langUpdated = this.lang;
+  }
+
+  updateTitles() {
+    // It is not a good practice to localize items outside of the element via the default view
+    // <app-view> element should be defined instead to render the title and the links
+    document.querySelector('#app-title').textContent = this.text['app-title'];
+    document.querySelector('#todos-link').textContent = this.text['todos-link'];
+    document.querySelector('#stats-link').textContent = this.text['stats-link'];
   }
 
   stateChanged(state) {
@@ -33,7 +68,7 @@ class TodoView extends connect(store)(BaseView) {
   }
 
   render() {
-    return html`
+    return html`${bind(this, 'todo-view')}
       <style>
         todo-view {
           display: block;
@@ -99,7 +134,7 @@ class TodoView extends connect(store)(BaseView) {
           Object.values(VisibilityFilters).map(
             filter => html`
               <vaadin-radio-button value="${filter}"
-                >${filter}</vaadin-radio-button
+                >${this.text.filters ? this.text.filters[filter] : filter}</vaadin-radio-button
               >
             `
           )
@@ -108,6 +143,16 @@ class TodoView extends connect(store)(BaseView) {
       <vaadin-button @click="${this.clearCompleted}">
         Clear Completed
       </vaadin-button>
+      <template>
+        <json-data id="filters">{
+          "All": "All",
+          "Active": "Active",
+          "Completed": "Completed"
+        }</json-data>
+        <span id="app-title">Todo App</span>
+        <span id="todos-link">Todos</span>
+        <span id="stats-link">Stats</span>
+      </template>
     `;
   }
 

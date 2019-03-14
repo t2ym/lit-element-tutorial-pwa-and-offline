@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file xml:space="default" source-language="en" target-language="ja" datatype="plaintext" original="messages" date="2019-03-14T11:54:14Z" product-name="messages">
+    <header>
+      <tool tool-id="xliff-conv" tool-name="xliff-conv" tool-version="1.0.12"/>
+    </header>
+    <body>
+      <trans-unit id="chart-labels.completed" approved="yes">
+        <source>Completed</source>
+        <target state="translated">完了</target>
+      </trans-unit>
+      <trans-unit id="chart-labels.active" approved="yes">
+        <source>Active</source>
+        <target state="translated">アクティブ</target>
+      </trans-unit>
+      <trans-unit id="not-found-view.h1" approved="yes">
+        <source>Not found!</source>
+        <target state="translated">見つかりません!</target>
+      </trans-unit>
+      <trans-unit id="nothing-to-do.p" approved="yes">
+        <source>Nothing to do! 🌴</source>
+        <target state="translated">何も項目がありません! 🌴</target>
+      </trans-unit>
+      <trans-unit id="todo-view.model.div_1:vaadin-text-field.placeholder" approved="yes">
+        <source>Task</source>
+        <target state="translated">作業項目</target>
+      </trans-unit>
+      <trans-unit id="todo-view.div_1:vaadin-button_1" approved="yes">
+        <source> Add Todo </source>
+        <target state="translated"> 項目の追加 </target>
+      </trans-unit>
+      <trans-unit id="todo-view.vaadin-button_4" approved="yes">
+        <source> Clear Completed </source>
+        <target state="translated"> 完了項目の消去 </target>
+      </trans-unit>
+      <trans-unit id="todo-view.filters.All" approved="yes">
+        <source>All</source>
+        <target state="translated">全て</target>
+      </trans-unit>
+      <trans-unit id="todo-view.filters.Active" approved="yes">
+        <source>Active</source>
+        <target state="translated">アクティブ</target>
+      </trans-unit>
+      <trans-unit id="todo-view.filters.Completed" approved="yes">
+        <source>Completed</source>
+        <target state="translated">完了</target>
+      </trans-unit>
+      <trans-unit id="todo-view.app-title" approved="yes">
+        <source>Todo App</source>
+        <target state="translated">Todo アプリ</target>
+      </trans-unit>
+      <trans-unit id="todo-view.todos-link" approved="yes">
+        <source>Todos</source>
+        <target state="translated">作業項目一覧</target>
+      </trans-unit>
+      <trans-unit id="todo-view.stats-link" approved="yes">
+        <source>Stats</source>
+        <target state="translated">統計情報</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,51 @@
+{
+  "chart-labels": {
+    "meta": {
+      "todo": []
+    },
+    "model": {},
+    "completed": "完了",
+    "active": "アクティブ"
+  },
+  "not-found-view": {
+    "meta": {
+      "todo": []
+    },
+    "model": {},
+    "h1": "見つかりません!"
+  },
+  "nothing-to-do": {
+    "meta": {
+      "todo": []
+    },
+    "model": {},
+    "p": "何も項目がありません! 🌴"
+  },
+  "stats-view": {
+    "meta": {
+      "todo": []
+    },
+    "model": {}
+  },
+  "todo-view": {
+    "meta": {
+      "todo": []
+    },
+    "model": {
+      "div_1:vaadin-text-field": {
+        "placeholder": "作業項目"
+      }
+    },
+    "div_1:vaadin-button_1": " 項目の追加 ",
+    "vaadin-button_4": " 完了項目の消去 ",
+    "filters": {
+      "All": "全て",
+      "Active": "アクティブ",
+      "Completed": "完了"
+    },
+    "app-title": "Todo アプリ",
+    "todos-link": "作業項目一覧",
+    "stats-link": "統計情報"
+  },
+  "bundle": true
+}

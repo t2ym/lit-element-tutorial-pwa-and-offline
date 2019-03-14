@@ -1,0 +1,18 @@
+{
+  "meta": {},
+  "model": {
+    "div_1:vaadin-text-field": {
+      "placeholder": "Task"
+    }
+  },
+  "div_1:vaadin-button_1": " Add Todo ",
+  "vaadin-button_4": " Clear Completed ",
+  "filters": {
+    "All": "All",
+    "Active": "Active",
+    "Completed": "Completed"
+  },
+  "app-title": "Todo App",
+  "todos-link": "Todos",
+  "stats-link": "Stats"
+}
