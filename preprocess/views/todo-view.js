@@ -2,7 +2,7 @@
 import {
   html,
   bind
-} from 'i18n-element';
+} from 'i18n-element/i18n-core.js';
 import '@vaadin/vaadin-text-field';
 import '@vaadin/vaadin-button';
 import '@vaadin/vaadin-checkbox';

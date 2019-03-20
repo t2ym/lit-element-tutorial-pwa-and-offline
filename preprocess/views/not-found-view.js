@@ -2,7 +2,7 @@
 import {
   html,
   bind
-} from 'i18n-element';
+} from 'i18n-element/i18n-core.js';
 import { BaseView } from './base-view';
 class NotFoundView extends BaseView {
   static get is() {

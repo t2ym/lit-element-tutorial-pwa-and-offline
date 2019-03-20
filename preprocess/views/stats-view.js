@@ -2,7 +2,7 @@
 import {
   html,
   bind
-} from 'i18n-element';
+} from 'i18n-element/i18n-core.js';
 import { connect } from 'pwa-helpers';
 import { store } from '../redux/store.js';
 import { statsSelector } from '../redux/reducer.js';
